@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head><title>Calculator</title>
+<style>
+input[type="text"]
+{
+		width:150px;
+		height:50px;
+		font-size:20px;
+		
+}
+input[type="button"]{
+	width:50px;
+	height:50px;
+	font-size:20px;
+	background-color:gray;
+	color:white;
+	
+}
+table{
+	border:2px solid red;
+	border-collapse:collapse;
+	background-color:white;
+}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan="3"><input type="text" id="res">  </td>
+			<td><input type="button" onclick="clr()" value="C"></td>
+		</tr>
+		<tr>
+			<td><input type="button" onclick="disp(1)" value="1"></td>
+			<td><input type="button" onclick="disp(2)" value="2"></td>
+			<td><input type="button" onclick="disp(3)" value="3"></td>
+			<td><input type="button" onclick="disp('+')" value="+"></td>
+		</tr>
+		
+		<tr>
+			<td><input type="button" onclick="disp(4)" value="4"></td>
+			<td><input type="button" onclick="disp(5)" value="5"></td>
+			<td><input type="button" onclick="disp(6)" value="6"></td>
+			<td><input type="button" onclick="disp('-')" value="-"></td>
+		</tr>
+		
+		<tr>
+			<td><input type="button" onclick="disp(7)" value="7"></td>
+			<td><input type="button" onclick="disp(8)" value="8"></td>
+			<td><input type="button" onclick="disp(9)" value="9"></td>
+			<td><input type="button" onclick="disp('/')" value="/"></td>
+		</tr>
+		
+		<tr>
+			<td><input type="button" onclick="disp('.')" value="."></td>
+			<td><input type="button" onclick="disp(0)" value="0"></td>
+			<td><input type="button" onclick="solve()" value="="></td>
+			<td><input type="button" onclick="disp('*')" value="*"></td>
+		</tr>
+	</table>
+	
+	<script>
+	function disp(val)
+	{
+		document.getElementById("res").value+=val;
+	}
+	function solve()
+	{
+		let x=document.getElementById("res").value;
+		let y=eval(x);
+		document.getElementById("res").value=y;
+	}
+	function clr()
+	{
+		document.getElementById("res").value=  " ";
+	}
+	</script>
+</body>
+</html>
